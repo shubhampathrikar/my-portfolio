@@ -9,4 +9,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('shubham-portfolio');
+  language: 'en' | 'de' = 'en';
+
+  setLanguage(language: 'en' | 'de') {
+    this.language = language;
+  }
 }

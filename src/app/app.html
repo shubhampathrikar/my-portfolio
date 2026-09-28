@@ -3,11 +3,33 @@
     <a class="logo" href="#">SP</a>
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">{{ language === 'en' ? 'About' : 'Über mich' }}</a>
+      <a href="#experience">{{ language === 'en' ? 'Experience' : 'Erfahrung' }}</a>
+      <a href="#skills">{{ language === 'en' ? 'Skills' : 'Technische Skills' }}</a>
+      <a href="#projects">{{ language === 'en' ? 'Projects' : 'Projekte' }}</a>
+      <a href="#contact">{{ language === 'en' ? 'Contact' : 'Kontakt' }}</a>
+
+      <span class="language-switcher">
+  <button
+    [class.active]="language === 'en'"
+    (click)="setLanguage('en')"
+  >
+    <span class="flag">
+      <img src="/flags/uk.svg" alt="English" />
+    </span>
+    EN
+  </button>
+
+  <button
+    [class.active]="language === 'de'"
+    (click)="setLanguage('de')"
+  >
+    <span class="flag">
+      <img src="/flags/germany.svg" alt="German" />
+    </span>
+    DE
+  </button>
+</span>
     </nav>
   </div>
 </header>
@@ -15,68 +37,88 @@
 <main>
   <section class="hero">
     <div class="hero-content">
-      <p class="eyebrow">SOFTWARE ENGINEER · 7+ YEARS EXPERIENCE</p>
+
+      <p class="eyebrow">
+        {{ language === 'en'
+        ? 'SOFTWARE ENGINEER · 7+ YEARS EXPERIENCE'
+        : 'SOFTWARE ENGINEER · 7+ JAHRE ERFAHRUNG' }}
+      </p>
 
       <h1>
-        Building software<br />
-        that solves complex problems.
+        {{ language === 'en'
+        ? 'Building software'
+        : 'Software entwickeln' }}
+        <br />
+        {{ language === 'en'
+        ? 'that solves complex problems.'
+        : 'das komplexe Probleme löst.' }}
       </h1>
 
       <p class="hero-description">
-        I'm Shubham Pathrikar, a software engineer experienced in
-        distributed systems, enterprise applications, system integration,
-        and application modernization.
+        {{ language === 'en'
+        ? "I'm Shubham Pathrikar, a software engineer experienced in distributed systems, enterprise applications, system integration, and application modernization."
+        : 'Ich bin Shubham Pathrikar, Software Engineer mit Erfahrung in verteilten Systemen, Unternehmensanwendungen, Systemintegration und der Modernisierung von Anwendungen.' }}
       </p>
 
       <p class="hero-stack">
-        Java · Spring Boot · Microservices · Cloud · Angular
+        Java · Spring Boot · Microservices · Kafka · Cloud · Angular
       </p>
 
       <div class="hero-actions">
-        <a href="#projects" class="button primary">View my work</a>
+        <a href="#projects" class="button primary">
+          {{ language === 'en' ? 'View my work' : 'Meine Projekte' }}
+        </a>
+
+        <a href="#experience" class="button secondary">
+          {{ language === 'en' ? 'My experience' : 'Meine Erfahrung' }}
+        </a>
 
         <a
           href="/Shubham_Pathrikar_Sept_2026.pdf"
           target="_blank"
           class="button secondary"
         >
-          View CV
+          {{ language === 'en' ? 'View CV' : 'Lebenslauf ansehen' }}
         </a>
       </div>
+
     </div>
   </section>
 
   <section id="about" class="section">
-    <p class="section-label">ABOUT</p>
+    <p class="section-label">
+      {{ language === 'en' ? 'ABOUT' : 'ÜBER MICH' }}
+    </p>
 
     <h2>
-      Software engineering focused on scalable,
-      maintainable systems.
+      {{ language === 'en'
+      ? 'Software engineering focused on scalable, maintainable systems.'
+      : 'Softwareentwicklung mit Fokus auf skalierbare und wartbare Systeme.' }}
     </h2>
 
     <p class="section-text">
-      I'm a software engineer with 7+ years of experience delivering
-      Java and Spring-based solutions, microservices, APIs,
-      event-driven integrations, and legacy-system modernization.
+      {{ language === 'en'
+      ? "I'm a software engineer with 7+ years of experience delivering Java and Spring-based solutions, microservices, APIs, event-driven integrations, and legacy-system modernization."
+      : 'Ich bin Software Engineer mit über 7 Jahren Erfahrung in der Entwicklung von Java- und Spring-basierten Lösungen, Microservices, APIs, ereignisgesteuerten Integrationen und der Modernisierung von Legacy-Systemen.' }}
     </p>
 
     <p class="section-text">
-      My experience includes designing distributed services,
-      improving system data flows, integrating enterprise systems,
-      and translating operational requirements into maintainable
-      technical implementations.
+      {{ language === 'en'
+      ? 'My experience includes designing distributed services, improving system data flows, integrating enterprise systems, and translating operational requirements into maintainable technical implementations.'
+      : 'Zu meiner Erfahrung gehören die Entwicklung verteilter Services, die Optimierung von Datenflüssen, die Integration von Unternehmenssystemen sowie die Umsetzung operativer Anforderungen in wartbare technische Lösungen.' }}
     </p>
 
     <p class="section-text">
-      I've worked across automotive, logistics and banking domains,
-      collaborating with technical and business stakeholders to
-      deliver software, troubleshoot production issues, and improve
-      engineering and release processes.
+      {{ language === 'en'
+      ? "I've worked across automotive, logistics and banking domains, collaborating with technical and business stakeholders to deliver software, troubleshoot production issues, and improve engineering and release processes."
+      : 'Ich habe in den Bereichen Automotive, Logistik und Banking gearbeitet und dabei mit technischen und fachlichen Stakeholdern zusammengearbeitet, um Software zu entwickeln, Produktionsprobleme zu lösen und Entwicklungs- sowie Release-Prozesse zu verbessern.' }}
     </p>
   </section>
 
   <section id="experience" class="section">
-    <p class="section-label">EXPERIENCE</p>
+    <p class="section-label">
+      {{ language === 'en' ? 'EXPERIENCE' : 'BERUFSERFAHRUNG' }}
+    </p>
 
     <div class="experience-item">
       <div class="experience-header">
@@ -84,37 +126,45 @@
           <h3>Junior Consultant · T-Systems</h3>
           <p>Pune, India</p>
         </div>
-
         <span>Mar 2022 — Present</span>
       </div>
 
       <div class="experience-content">
         <p>
-          Working on enterprise and automotive-domain applications,
-          including backend development, system integration,
-          modernization and release processes.
+          {{ language === 'en'
+          ? 'Working on enterprise and automotive-domain applications, including backend development, system integration, modernization and release processes.'
+          : 'Arbeit an Unternehmens- und Automotive-Anwendungen mit Schwerpunkt auf Backend-Entwicklung, Systemintegration, Modernisierung und Release-Prozessen.' }}
         </p>
 
         <ul>
           <li>
-            Engineered RESTful backend services for the LOGBUS Cars
-            Modernization project.
+            {{ language === 'en'
+            ? 'Engineered RESTful backend services for the LOGBUS Cars Modernization project.'
+            : 'Entwicklung von RESTful Backend-Services für das Projekt LOGBUS Cars Modernization.' }}
           </li>
+
           <li>
-            Worked on system integrations and data flows across
-            connected enterprise applications.
+            {{ language === 'en'
+            ? 'Worked on system integrations and data flows across connected enterprise applications.'
+            : 'Mitarbeit an Systemintegrationen und Datenflüssen zwischen verbundenen Unternehmensanwendungen.' }}
           </li>
+
           <li>
-            Managed secure file-transfer integrations using Axway CFT
-            and CRON.
+            {{ language === 'en'
+            ? 'Managed secure file-transfer integrations using Axway CFT and CRON.'
+            : 'Betreuung sicherer File-Transfer-Integrationen mit Axway CFT und CRON.' }}
           </li>
+
           <li>
-            Developed Angular and Highcharts visualizations for
-            operational business metrics.
+            {{ language === 'en'
+            ? 'Developed Angular and Highcharts visualizations for operational business metrics.'
+            : 'Entwicklung von Angular- und Highcharts-Visualisierungen für operative Geschäftskennzahlen.' }}
           </li>
+
           <li>
-            Contributed to troubleshooting, implementation decisions
-            and cross-functional delivery.
+            {{ language === 'en'
+            ? 'Contributed to troubleshooting, implementation decisions and cross-functional delivery.'
+            : 'Mitwirkung bei Fehleranalysen, technischen Entscheidungen und der bereichsübergreifenden Umsetzung.' }}
           </li>
         </ul>
       </div>
@@ -126,49 +176,65 @@
           <h3>Programmer · Bitwise</h3>
           <p>Pune, India</p>
         </div>
-
         <span>Aug 2019 — Jan 2022</span>
       </div>
 
       <div class="experience-content">
         <p>
-          Worked on banking-domain applications involving distributed
-          systems, event-driven processing and legacy modernization.
+          {{ language === 'en'
+          ? 'Worked on banking-domain applications involving distributed systems, event-driven processing and legacy modernization.'
+          : 'Arbeit an Anwendungen im Banking-Bereich mit verteilten Systemen, ereignisgesteuerter Verarbeitung und Legacy-Modernisierung.' }}
         </p>
 
         <ul>
           <li>
-            Designed Spring Boot APIs that automated business processes,
-            contributing to a reported 95% reduction in operational costs.
+            {{ language === 'en'
+            ? 'Designed Spring Boot APIs that automated business processes, contributing to a reported 95% reduction in operational costs.'
+            : 'Entwicklung von Spring-Boot-APIs zur Automatisierung von Geschäftsprozessen, die zu einer gemeldeten Reduzierung der Betriebskosten um 95 % beitrugen.' }}
           </li>
+
           <li>
-            Designed microservices-based distributed architecture
-            processing approximately 50,000 alerts daily.
+            {{ language === 'en'
+            ? 'Designed microservices-based distributed architecture processing approximately 50,000 alerts daily.'
+            : 'Entwicklung einer Microservices-basierten verteilten Architektur zur Verarbeitung von rund 50.000 Alerts pro Tag.' }}
           </li>
+
           <li>
-            Used Apache Kafka and IBM MQ for real-time event handling,
-            scalability and fault tolerance.
+            {{ language === 'en'
+            ? 'Used Apache Kafka and IBM MQ for real-time event handling, scalability and fault tolerance.'
+            : 'Einsatz von Apache Kafka und IBM MQ für Echtzeit-Eventverarbeitung, Skalierbarkeit und Ausfallsicherheit.' }}
           </li>
+
           <li>
-            Modernized legacy applications by migrating WebSphere
-            Application Server from WAS8 to WAS9.
+            {{ language === 'en'
+            ? 'Modernized legacy applications by migrating WebSphere Application Server from WAS8 to WAS9.'
+            : 'Modernisierung von Legacy-Anwendungen durch die Migration des WebSphere Application Servers von WAS8 auf WAS9.' }}
           </li>
+
           <li>
-            Transitioned SOAP-based integrations to REST APIs and
-            resolved production issues through root-cause analysis.
+            {{ language === 'en'
+            ? 'Transitioned SOAP-based integrations to REST APIs and resolved production issues through root-cause analysis.'
+            : 'Umstellung SOAP-basierter Integrationen auf REST APIs sowie Behebung von Produktionsproblemen durch Root-Cause-Analysen.' }}
           </li>
         </ul>
       </div>
     </div>
   </section>
-  <section id="skills" class="section">
-    <p class="section-label">TECHNICAL SKILLS</p>
 
-    <h2>Tools I use to build and operate backend systems.</h2>
+  <section id="skills" class="section">
+    <p class="section-label">
+      {{ language === 'en' ? 'TECHNICAL SKILLS' : 'TECHNISCHE SKILLS' }}
+    </p>
+
+    <h2>
+      {{ language === 'en'
+      ? 'Tools I use to build and operate backend systems.'
+      : 'Technologien, mit denen ich Backend-Systeme entwickle und betreibe.' }}
+    </h2>
 
     <div class="skills-grid">
       <div class="skill-group">
-        <h3>Backend</h3>
+        <h3>{{ language === 'en' ? 'Backend' : 'Backend' }}</h3>
         <div class="skill-tags">
           <span>Java</span>
           <span>Spring Boot</span>
@@ -180,17 +246,21 @@
       </div>
 
       <div class="skill-group">
-        <h3>Distributed Systems</h3>
+        <h3>
+          {{ language === 'en' ? 'Distributed Systems' : 'Verteilte Systeme' }}
+        </h3>
         <div class="skill-tags">
           <span>Apache Kafka</span>
           <span>IBM MQ</span>
           <span>Microservices</span>
-          <span>Asynchronous Processing</span>
+          <span>{{ language === 'en' ? 'Asynchronous Processing' : 'Asynchrone Verarbeitung' }}</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <h3>Cloud & Infrastructure</h3>
+        <h3>
+          {{ language === 'en' ? 'Cloud & Infrastructure' : 'Cloud & Infrastruktur' }}
+        </h3>
         <div class="skill-tags">
           <span>AWS</span>
           <span>Docker</span>
@@ -201,7 +271,7 @@
       </div>
 
       <div class="skill-group">
-        <h3>Data</h3>
+        <h3>{{ language === 'en' ? 'Data' : 'Daten' }}</h3>
         <div class="skill-tags">
           <span>PostgreSQL</span>
           <span>Oracle</span>
@@ -211,7 +281,7 @@
       </div>
 
       <div class="skill-group">
-        <h3>Frontend</h3>
+        <h3>{{ language === 'en' ? 'Frontend' : 'Frontend' }}</h3>
         <div class="skill-tags">
           <span>Angular</span>
           <span>TypeScript</span>
@@ -221,7 +291,9 @@
       </div>
 
       <div class="skill-group">
-        <h3>Testing & Development</h3>
+        <h3>
+          {{ language === 'en' ? 'Testing & Development' : 'Testing & Entwicklung' }}
+        </h3>
         <div class="skill-tags">
           <span>JUnit</span>
           <span>Mockito</span>
@@ -233,8 +305,11 @@
       </div>
     </div>
   </section>
+
   <section id="projects" class="section">
-    <p class="section-label">SELECTED PROJECT</p>
+    <p class="section-label">
+      {{ language === 'en' ? 'SELECTED PROJECT' : 'AUSGEWÄHLTES PROJEKT' }}
+    </p>
 
     <div class="project-card">
       <div class="project-image">
@@ -243,23 +318,34 @@
           alt="Workation Management Platform showing workation records"
         />
       </div>
+
       <div class="project-content">
 
-        <p class="project-type">FULL-STACK · AI-ASSISTED DEVELOPMENT</p>
+        <p class="project-type">
+          {{ language === 'en'
+          ? 'FULL-STACK · AI-ASSISTED DEVELOPMENT'
+          : 'FULL-STACK · KI-UNTERSTÜTZTE ENTWICKLUNG' }}
+        </p>
 
         <h2>Workation Management Platform</h2>
 
         <p class="project-intro">
-          A full-stack workation management platform built with Java,
-          Spring Boot, PostgreSQL and Angular.
+          {{ language === 'en'
+          ? 'A full-stack workation management platform built with Java, Spring Boot, PostgreSQL and Angular.'
+          : 'Eine Full-Stack-Plattform zur Verwaltung von Workations, entwickelt mit Java, Spring Boot, PostgreSQL und Angular.' }}
         </p>
 
         <div class="project-highlight">
-          <strong>Built in approximately 3–4 hours</strong>
+          <strong>
+            {{ language === 'en'
+            ? 'Built in approximately 3–4 hours'
+            : 'In etwa 3–4 Stunden entwickelt' }}
+          </strong>
+
           <span>
-          AI-assisted development was used to accelerate implementation,
-          debugging, testing and documentation, with generated code
-          reviewed and refined manually.
+          {{ language === 'en'
+            ? 'AI-assisted development was used to accelerate implementation, debugging, testing and documentation, with generated code reviewed and refined manually.'
+            : 'KI wurde eingesetzt, um Implementierung, Debugging, Testing und Dokumentation zu beschleunigen. Der generierte Code wurde manuell geprüft und weiterentwickelt.' }}
         </span>
         </div>
 
@@ -276,31 +362,43 @@
         </div>
 
         <div class="project-details">
+
           <div>
-            <h3>What I built</h3>
+            <h3>
+              {{ language === 'en' ? 'What I built' : 'Was ich entwickelt habe' }}
+            </h3>
+
             <p>
-              A REST-based application that imports workation data from CSV,
-              persists it in PostgreSQL and presents it through an Angular
-              interface with sorting, country flags and risk indicators.
+              {{ language === 'en'
+              ? 'A REST-based application that imports workation data from CSV, persists it in PostgreSQL and presents it through an Angular interface with sorting, country flags and risk indicators.'
+              : 'Eine REST-basierte Anwendung, die Workation-Daten aus CSV importiert, in PostgreSQL speichert und über eine Angular-Oberfläche mit Sortierung, Länderflaggen und Risikoindikatoren darstellt.' }}
             </p>
           </div>
 
           <div>
-            <h3>Engineering focus</h3>
+            <h3>
+              {{ language === 'en' ? 'Engineering focus' : 'Technischer Fokus' }}
+            </h3>
+
             <p>
-              DTO-based API boundaries, MapStruct mapping, batch persistence,
-              automated testing, structured logging and containerized
-              development.
+              {{ language === 'en'
+              ? 'DTO-based API boundaries, MapStruct mapping, batch persistence, automated testing, structured logging and containerized development.'
+              : 'DTO-basierte API-Grenzen, MapStruct-Mapping, Batch-Persistierung, automatisierte Tests, strukturiertes Logging und containerisierte Entwicklung.' }}
             </p>
           </div>
+
         </div>
+
         <div class="architecture">
-          <h3>Architecture</h3>
+
+          <h3>
+            {{ language === 'en' ? 'Architecture' : 'Architektur' }}
+          </h3>
 
           <div class="architecture-flow">
             <div class="architecture-box">
               <strong>Angular</strong>
-              <span>Frontend</span>
+              <span>{{ language === 'en' ? 'Frontend' : 'Frontend' }}</span>
             </div>
 
             <div class="architecture-arrow">→</div>
@@ -314,11 +412,12 @@
 
             <div class="architecture-box">
               <strong>PostgreSQL</strong>
-              <span>Persistence</span>
+              <span>{{ language === 'en' ? 'Persistence' : 'Persistierung' }}</span>
             </div>
           </div>
 
           <div class="architecture-flow secondary-flow">
+
             <div class="architecture-box">
               <strong>CSV Import</strong>
               <span>Java</span>
@@ -328,71 +427,104 @@
 
             <div class="architecture-box">
               <strong>JPA / Hibernate</strong>
-              <span>Data access</span>
+              <span>{{ language === 'en' ? 'Data access' : 'Datenzugriff' }}</span>
             </div>
 
             <div class="architecture-arrow">→</div>
 
             <div class="architecture-box">
               <strong>PostgreSQL</strong>
-              <span>Database</span>
+              <span>{{ language === 'en' ? 'Database' : 'Datenbank' }}</span>
             </div>
+
           </div>
         </div>
+
         <div class="engineering-decisions">
-          <h3>Engineering decisions</h3>
+
+          <h3>
+            {{ language === 'en'
+            ? 'Engineering decisions'
+            : 'Technische Entscheidungen' }}
+          </h3>
 
           <div class="decision">
-            <strong>DTO-based API boundary</strong>
+            <strong>
+              {{ language === 'en'
+              ? 'DTO-based API boundary'
+              : 'DTO-basierte API-Grenze' }}
+            </strong>
+
             <p>
-              API responses are separated from persistence entities using
-              MapStruct, keeping the database model decoupled from the
-              external API contract.
+              {{ language === 'en'
+              ? 'API responses are separated from persistence entities using MapStruct, keeping the database model decoupled from the external API contract.'
+              : 'API-Antworten werden mithilfe von MapStruct von den Persistence-Entities getrennt. Dadurch bleibt das Datenbankmodell vom externen API-Vertrag entkoppelt.' }}
             </p>
           </div>
 
           <div class="decision">
-            <strong>Batch persistence</strong>
+            <strong>
+              {{ language === 'en'
+              ? 'Batch persistence'
+              : 'Batch-Persistierung' }}
+            </strong>
+
             <p>
-              CSV records are parsed into a collection and persisted using
-              Spring Data's saveAll operation rather than writing records
-              individually.
+              {{ language === 'en'
+              ? "CSV records are parsed into a collection and persisted using Spring Data's saveAll operation rather than writing records individually."
+              : 'CSV-Datensätze werden zunächst in eine Collection eingelesen und anschließend über Spring Datas saveAll-Operation gespeichert, anstatt jeden Datensatz einzeln zu schreiben.' }}
             </p>
           </div>
 
           <div class="decision">
-            <strong>Automated testing</strong>
+            <strong>
+              {{ language === 'en'
+              ? 'Automated testing'
+              : 'Automatisierte Tests' }}
+            </strong>
+
             <p>
-              Unit tests cover CSV parsing, service behavior and persistence
-              interactions using JUnit and Mockito.
+              {{ language === 'en'
+              ? 'Unit tests cover CSV parsing, service behavior and persistence interactions using JUnit and Mockito.'
+              : 'Unit-Tests decken CSV-Parsing, Service-Verhalten und Interaktionen mit der Persistenz mithilfe von JUnit und Mockito ab.' }}
             </p>
           </div>
 
           <div class="decision">
-            <strong>AI-assisted development</strong>
+            <strong>
+              {{ language === 'en'
+              ? 'AI-assisted development'
+              : 'KI-unterstützte Entwicklung' }}
+            </strong>
+
             <p>
-              AI was used to accelerate implementation, debugging, testing
-              and documentation during the approximately 3–4 hour development
-              process. Generated code was reviewed and refined manually.
+              {{ language === 'en'
+              ? 'AI was used to accelerate implementation, debugging, testing and documentation during the approximately 3–4 hour development process. Generated code was reviewed and refined manually.'
+              : 'KI wurde während des etwa 3–4-stündigen Entwicklungsprozesses eingesetzt, um Implementierung, Debugging, Testing und Dokumentation zu beschleunigen. Der generierte Code wurde manuell geprüft und weiterentwickelt.' }}
             </p>
           </div>
+
         </div>
+
         <div class="project-actions">
+
           <a
-            href="https://github.com/shubhampathrikar/Workation"
+            href="https://github.com/shubhampathrikar/WorkFlex"
             target="_blank"
             rel="noopener noreferrer"
             class="button primary"
           >
-            View on GitHub
+            {{ language === 'en'
+            ? 'View on GitHub'
+            : 'Auf GitHub ansehen' }}
           </a>
 
-          <a
-            href="#"
-            class="button secondary"
-          >
-            Live demo
+          <a href="#" class="button secondary">
+            {{ language === 'en'
+            ? 'Live demo (coming soon)'
+            : 'Live-Demo (demnächst verfügbar)' }}
           </a>
+
         </div>
 
       </div>
@@ -400,14 +532,20 @@
   </section>
 
   <section id="contact" class="section contact">
-    <p class="section-label">CONTACT</p>
+    <p class="section-label">
+      {{ language === 'en' ? 'CONTACT' : 'KONTAKT' }}
+    </p>
 
-    <h2>Let's connect.</h2>
+    <h2>
+      {{ language === 'en'
+      ? "Let's connect."
+      : 'Lass uns in Kontakt treten.' }}
+    </h2>
 
     <p>
-      I'm open to software engineering opportunities where I can work
-      on challenging systems, collaborate with strong engineering teams,
-      and continue building products at scale.
+      {{ language === 'en'
+      ? "I'm open to software engineering opportunities where I can work on challenging systems, collaborate with strong engineering teams, and continue building products at scale."
+      : 'Ich bin offen für Software-Engineering-Möglichkeiten, bei denen ich an anspruchsvollen Systemen arbeiten, mit starken Engineering-Teams zusammenarbeiten und weiterhin skalierbare Produkte entwickeln kann.' }}
     </p>
 
     <div class="contact-links">
@@ -428,7 +566,7 @@
       </a>
 
       <a href="mailto:shubhampathrikar07@gmail.com">
-        Email
+        {{ language === 'en' ? 'Email' : 'E-Mail' }}
       </a>
     </div>
   </section>
