@@ -312,12 +312,6 @@
     </p>
 
     <div class="project-card">
-      <div class="project-image">
-        <img
-          src="/projects/workationsc.png"
-          alt="Workation Management Platform showing workation records"
-        />
-      </div>
 
       <div class="project-content">
 
@@ -328,7 +322,12 @@
         </p>
 
         <h2>Workation Management Platform</h2>
-
+        <div class="project-image">
+          <img
+            src="/projects/workationsc.png"
+            alt="Workation Management Platform showing workation records"
+          />
+        </div>
         <p class="project-intro">
           {{ language === 'en'
           ? 'A full-stack workation management platform built with Java, Spring Boot, PostgreSQL and Angular.'
@@ -523,6 +522,95 @@
             {{ language === 'en'
             ? 'Live demo (coming soon)'
             : 'Live-Demo (demnächst verfügbar)' }}
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- German Flashcards -->
+    <div class="project-card">
+
+
+      <div class="project-content">
+
+        <p class="project-type">
+          {{ language === 'en'
+          ? 'FRONTEND · PERSONAL PROJECT'
+          : 'FRONTEND · PERSÖNLICHES PROJEKT' }}
+        </p>
+
+        <h2>Deutsch A1 — German Flashcards</h2>
+        <div class="project-image">
+          <img
+            src="/projects/german-flashcards.png"
+            alt="German A1 Flashcards application"
+          />
+        </div>
+        <p class="project-intro">
+          {{ language === 'en'
+          ? 'A lightweight interactive German vocabulary learning application built with Angular and TypeScript.'
+          : 'Eine interaktive Anwendung zum Lernen deutscher Vokabeln, entwickelt mit Angular und TypeScript.' }}
+        </p>
+
+        <div class="tags">
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Vercel</span>
+        </div>
+
+        <div class="project-details">
+
+          <div>
+            <h3>
+              {{ language === 'en' ? 'What I built' : 'Was ich entwickelt habe' }}
+            </h3>
+
+            <p>
+              {{ language === 'en'
+              ? 'A focused A1 German vocabulary practice app with interactive flashcards, category-based learning, shuffle mode and keyboard navigation.'
+              : 'Eine fokussierte Lernanwendung für deutsche A1-Vokabeln mit interaktiven Karteikarten, Kategorien, Shuffle-Modus und Tastaturnavigation.' }}
+            </p>
+          </div>
+
+          <div>
+            <h3>
+              {{ language === 'en' ? 'Key features' : 'Funktionen' }}
+            </h3>
+
+            <p>
+              {{ language === 'en'
+              ? '3D card flipping, previous and next navigation, category filtering, shuffle mode, keyboard shortcuts and responsive design.'
+              : '3D-Kartenanimation, Navigation mit Zurück und Weiter, Kategoriefilter, Shuffle-Modus, Tastaturkürzel und responsives Design.' }}
+            </p>
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://github.com/shubhampathrikar/Learn-Deutsch"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button primary"
+          >
+            {{ language === 'en'
+            ? 'View on GitHub'
+            : 'Auf GitHub ansehen' }}
+          </a>
+
+          <a
+            href="https://learn-deutsch-self.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button secondary"
+          >
+            {{ language === 'en'
+            ? 'Live Demo'
+            : 'Live-Demo' }}
           </a>
 
         </div>
